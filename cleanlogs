@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Set the log directory (you can modify this if needed)
+LOG_DIR="/var/log"
+
+# Size threshold (50 MB in bytes)
+SIZE_THRESHOLD=$((50 * 1024 * 1024))
+
+# Find and delete logs larger than 50 MB
+find $LOG_DIR -type f -size +$SIZE_THRESHOLDc -exec rm -f {} \;
+
+echo "Logs larger than 50 MB have been removed."
